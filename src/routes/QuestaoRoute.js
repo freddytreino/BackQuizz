@@ -24,4 +24,13 @@ router.post('', async (req, res) => {
     }
 });
 
+router.get('',async (req,res)=>{
+    try {
+        const achou = await questaoService.buscarQuestoes();
+        res.json(achou)
+    } catch (error) {
+        
+    }
+})
+
 module.exports = router;
