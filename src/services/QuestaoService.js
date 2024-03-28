@@ -9,5 +9,13 @@ module.exports = {
             console.error('Erro ao criar questão:', error);
             throw new Error('Erro ao criar a questão. Por favor, tente novamente mais tarde.');
         }
+    },
+    buscarQuestoes: async() =>{
+        try {
+            let todas = await questionModel.find();
+            return todas
+        } catch (error) {
+            
+        }
     }
 };
