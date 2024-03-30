@@ -28,10 +28,10 @@ module.exports = {
             
         }
     },
-    buscarUltimoNumero: async(disciplina)=>{
-        if(disciplina=="matemática"){
+    buscarUltimoNumeroMath: async()=>{
+        
             let numero = await questaoMath.findOne().sort({numero:-1})
             return numero
-        }
+        
     }
 };

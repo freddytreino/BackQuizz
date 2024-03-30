@@ -45,9 +45,9 @@ router.get('',async (req,res)=>{
         
     }
 })
-router.get("/ultimo", async(req,res)=>{
+router.get("/ultimoMath", async(req,res)=>{
     try {
-        const achou = await questaoService.buscarUltimoNumero(req.body);
+        const achou = await questaoService.buscarUltimoNumeroMath();
         res.json(achou)
     } catch (error) {
         
