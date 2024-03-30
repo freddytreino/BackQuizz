@@ -45,5 +45,13 @@ router.get('',async (req,res)=>{
         
     }
 })
+router.get("/ultimo", async(req,res)=>{
+    try {
+        const achou = await questaoService.buscarUltimoNumero(req.body);
+        res.json(achou)
+    } catch (error) {
+        
+    }
+}) 
 
 module.exports = router;

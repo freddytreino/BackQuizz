@@ -27,5 +27,11 @@ module.exports = {
         } catch (error) {
             
         }
+    },
+    buscarUltimoNumero: async(disciplina)=>{
+        if(disciplina=="matemática"){
+            let numero = await questaoMath.findOne().sort({numero:-1})
+            return numero
+        }
     }
 };
