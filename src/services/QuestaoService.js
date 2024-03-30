@@ -1,9 +1,19 @@
 const questionModel = require('./../models/Questoes');
+const questaoMath = require("./../models/QuestoesMath")
 
 module.exports = {
     criarQuestao: async (questao) => {
         try {
             let novaQuestao = await questionModel.create(questao);
+            return novaQuestao;
+        } catch (error) {
+            console.error('Erro ao criar questão:', error);
+            throw new Error('Erro ao criar a questão. Por favor, tente novamente mais tarde.');
+        }
+    },
+    criarQuestaoMath: async (questao) => {
+        try {
+            let novaQuestao = await questaoMath.create(questao);
             return novaQuestao;
         } catch (error) {
             console.error('Erro ao criar questão:', error);

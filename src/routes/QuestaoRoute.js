@@ -23,6 +23,19 @@ router.post('', async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 });
+router.post('/matematica', async (req, res) => {
+    try {
+        const novaQuestao = await questaoService.criarQuestaoMath(req.body);
+        if (novaQuestao) {
+            res.json(novaQuestao);
+        } else {
+            res.status(500).json({ message: 'Erro ao criar a questão. Por favor, tente novamente mais tarde.' });
+        }
+    } catch (error) {
+        console.error('Erro ao criar questão:', error);
+        res.status(500).json({ message: error.message });
+    }
+});
 
 router.get('',async (req,res)=>{
     try {
