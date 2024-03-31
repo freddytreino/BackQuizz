@@ -9,7 +9,7 @@ router.use((req, res, next) => {
   }
   next();
 });
-
+/*
 router.post('', async (req, res) => {
     try {
         const novaQuestao = await questaoService.criarQuestao(req.body);
@@ -22,7 +22,7 @@ router.post('', async (req, res) => {
         console.error('Erro ao criar questão:', error);
         res.status(500).json({ message: error.message });
     }
-});
+});*/
 router.post('/matematica', async (req, res) => {
     try {
         const novaQuestao = await questaoService.criarQuestaoMath(req.body);
@@ -36,7 +36,19 @@ router.post('/matematica', async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 });
-
+router.post('/quimica', async (req, res) => {
+    try {
+        const novaQuestao = await questaoService.criarQuestaoQuimica(req.body);
+        if (novaQuestao) {
+            res.json(novaQuestao);
+        } else {
+            res.status(500).json({ message: 'Erro ao criar a questão. Por favor, tente novamente mais tarde.' });
+        }
+    } catch (error) {
+        console.error('Erro ao criar questão:', error);
+        res.status(500).json({ message: error.message });
+    }
+});
 router.get('',async (req,res)=>{
     try {
         const achou = await questaoService.buscarQuestoes();
@@ -52,6 +64,13 @@ router.get("/ultimoMath", async(req,res)=>{
     } catch (error) {
         
     }
+});
+router.get("/ultimoQuimica", async(req,res)=>{
+    try {
+        const achou = await questaoService.buscarUltimoNumeroQuimica();
+        res.json(achou)
+    } catch (error) {
+        
+    }
 }) 
-
 module.exports = router;
