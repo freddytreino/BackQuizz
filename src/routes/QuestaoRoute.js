@@ -121,6 +121,15 @@ router.post('/quimica', async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 });
+//teste para buscar questoes
+router.get('/artes', async (req, res) => {
+    try {
+        const achou = await questaoService.buscarQuestoesArtes();
+        res.json(achou)
+    } catch (error) {
+
+    }
+})
 router.get('', async (req, res) => {
     try {
         const achou = await questaoService.buscarQuestoes();

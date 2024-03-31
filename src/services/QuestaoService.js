@@ -6,7 +6,8 @@ const questaoFisica = require("../models/QuestoesFisica");
 const questaoGeografia = require("../models/QuestoesGeografia");
 const questaoHistoria = require("../models/QuestoesHistoria");
 const questaoMath = require("./../models/QuestoesMath");
-const questaoQuimica = require("./../models/QuestoesQuimica")
+const questaoQuimica = require("./../models/QuestoesQuimica");
+const QuestoesArtes = require('./../models/QuestoesArtes');
 
 module.exports = {
     /*
@@ -82,6 +83,15 @@ module.exports = {
             return novaQuestao;
         } catch (error) {
             throw new Error('Erro ao criar a questão. Por favor, tente novamente mais tarde.');
+        }
+    },
+    //teste para busncar
+    buscarQuestoesArtes: async () => {
+        try {
+            let todas = await QuestoesArtes.find();
+            return todas
+        } catch (error) {
+
         }
     },
     buscarQuestoes: async () => {
