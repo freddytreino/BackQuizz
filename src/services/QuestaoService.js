@@ -1,5 +1,4 @@
 const questionModel = require('./../models/Questoes');
-const questaoArtes = require("./../models/QuestoesArtes");
 const questaoBiologia = require("../models/QuestoesBiologia");
 const questaoFilosofia = require("../models/QuestoesFilosofia");
 const questaoFisica = require("../models/QuestoesFisica");
