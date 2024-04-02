@@ -7,7 +7,7 @@ const questaoGeografia = require("../models/QuestoesGeografia");
 const questaoHistoria = require("../models/QuestoesHistoria");
 const questaoMath = require("./../models/QuestoesMath");
 const questaoQuimica = require("./../models/QuestoesQuimica");
-const QuestoesArtes = require('./../models/QuestoesArtes');
+const questaoLinguagens = require('./../models/QuestoesLinguagens');
 
 module.exports = {
     /*
@@ -21,9 +21,9 @@ module.exports = {
         }
     },*/
     //regras para criar questões
-    criarQuestaoArtes: async (questao) => {
+    criarQuestaoLinguagens: async (questao) => {
         try {
-            let novaQuestao = await questaoArtes.create(questao);
+            let novaQuestao = await questaoLinguagens.create(questao);
             return novaQuestao
         } catch (error) {
             throw new Error('Erro ao criar a questão. Por favor, tente novamente mais tarde.');
@@ -86,9 +86,9 @@ module.exports = {
         }
     },
     //teste para busncar
-    buscarQuestoesArtes: async () => {
+    buscarQuestoesLinguagens: async () => {
         try {
-            let todas = await QuestoesArtes.find();
+            let todas = await questaoLinguagens.find();
             return todas
         } catch (error) {
 
@@ -103,9 +103,9 @@ module.exports = {
         }
     },
     // regras para buscar o ultimo numero para usar ao criar a questao
-    buscarUltimoNumeroArtes: async () => {
+    buscarUltimoNumeroLinguagens: async () => {
 
-        let numero = await questaoArtes.findOne().sort({ numero: -1 })
+        let numero = await questaoLinguagens.findOne().sort({ numero: -1 })
         return numero
 
     },

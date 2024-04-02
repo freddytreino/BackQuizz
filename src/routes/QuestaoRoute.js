@@ -25,9 +25,9 @@ router.post('', async (req, res) => {
 });*/
 
 //rotas para cirar as questoes de acordo com o banco de dados de cada uma
-router.post('/artes', async (req, res) => {
+router.post('/linguagens', async (req, res) => {
     try {
-        const novaQuestao = await questaoService.criarQuestaoArtes(req.body);
+        const novaQuestao = await questaoService.criarQuestaoLinguagens(req.body);
         if (novaQuestao) {
             res.json(novaQuestao);
         } else {
@@ -122,9 +122,9 @@ router.post('/quimica', async (req, res) => {
     }
 });
 //teste para buscar questoes
-router.get('/artes', async (req, res) => {
+router.get('/linguagens', async (req, res) => {
     try {
-        const achou = await questaoService.buscarQuestoesArtes();
+        const achou = await questaoService.buscarQuestoesLinguagens();
         res.json(achou)
     } catch (error) {
 
@@ -139,9 +139,9 @@ router.get('', async (req, res) => {
     }
 })
 //rotas para buscar ultima questao feita
-router.get("/ultimoArtes", async (req, res) => {
+router.get("/ultimoLinguagens", async (req, res) => {
     try {
-        const achou = await questaoService.buscarUltimoNumeroArtes();
+        const achou = await questaoService.buscarUltimoNumeroLinguagens();
         res.json(achou)
     } catch (error) {
 
