@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const questionLinguagensSchema = new Schema({
+const questionSchema = new Schema({
     numero:{
         type:Number,
         required:true
@@ -15,7 +15,11 @@ const questionLinguagensSchema = new Schema({
         enum: ['fácil', 'médio', 'difícil'],
         required: true
     },
-
+    subject: {
+        type: String,
+        enum: ['história', 'química', 'biologia', 'geografia', 'artes', 'matemática'],
+        required: true
+    },
     alternatives: [{
         text: {
             type: String,
@@ -28,4 +32,4 @@ const questionLinguagensSchema = new Schema({
     }]
 });
 
-module.exports = mongoose.model("QuestionArtes", questionLinguagensSchema);
+module.exports = mongoose.model("Question", questionSchema);
