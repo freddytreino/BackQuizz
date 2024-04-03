@@ -13,10 +13,10 @@ module.exports={
                 if (perfilEncontrado) {
                     const match = await bcrypt.compare(perfil.senha, perfilEncontrado.perfil.senha)
                     const igual= perfilEncontrado.perfil.email== perfil.email
-                    console.log(igual)
+                    //console.log(igual)
                   
                     if (match && igual) {
-                        //devolver o token + o id do perfil + email
+                        
                         const token = tokenUtil.gerarToken(JSON.stringify(perfilEncontrado.usuario))
                         return {
                             token: token,

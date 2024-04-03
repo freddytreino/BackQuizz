@@ -14,5 +14,19 @@ module.exports={
     }
 
   },
-
+  //atualizar a pontucao do usuario
+  atualizarPontuacao: async(pontuacao)=>{
+    try {
+      const id= pontuacao.id
+      const achado = await perfilModel.findOne({_id:id})
+      const pontos = pontuacao.pontuacao + achado.pontuacao
+      const quantidade = pontuacao.respondido +achado.respondido
+      
+      //console.log(achado)
+        let atualizarPontos = await perfilModel.updateOne({_id:id},{pontuacao:pontos,respondido:quantidade})
+        return atualizarPontos
+    } catch (error) {
+      throw { message: error.message, status: 500 }
+    }
+}
 }

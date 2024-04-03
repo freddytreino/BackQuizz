@@ -12,5 +12,12 @@ router.post('',async(req,res)=> {
         throw{message: message.error,status:500}
     }
 })
-
+router.post("/pontuacao",async (req,res)=>{
+    try {
+        const resposta = await perfilService.atualizarPontuacao(req.body)
+        res.json(resposta)
+    } catch (error) {
+        
+    }
+})
 module.exports = router
