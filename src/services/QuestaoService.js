@@ -95,7 +95,7 @@ module.exports = {
     },
     buscarQuestoes: async () => {
         try {
-            let todas = await questionModel.find();
+            let todas = await questionModel.aggregate([{$match:{subject:'matemática'}},{$sample:{size:5}}]);
             return todas
         } catch (error) {
 
