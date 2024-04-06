@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt')
 const perfilModel = require('./../models/Perfil')
 
-module.exports={
+module.exports = {
   cadastrar: async (perfil) => {
     try {
       perfil.perfil.senha = await bcrypt.hash(perfil.perfil.senha, 10)
@@ -15,18 +15,29 @@ module.exports={
 
   },
   //atualizar a pontucao do usuario
-  atualizarPontuacao: async(pontuacao)=>{
+  atualizarPontuacao: async (pontuacao) => {
     try {
-      const id= pontuacao.id
-      const achado = await perfilModel.findOne({_id:id})
+      const id = pontuacao.id
+      const achado = await perfilModel.findOne({ _id: id })
       const pontos = pontuacao.pontuacao + achado.pontuacao
-      const quantidade = pontuacao.respondido +achado.respondido
-      
+      const quantidade = pontuacao.respondido + achado.respondido
+
       //console.log(achado)
-        let atualizarPontos = await perfilModel.updateOne({_id:id},{pontuacao:pontos,respondido:quantidade})
-        return atualizarPontos
+      let atualizarPontos = await perfilModel.updateOne({ _id: id }, { pontuacao: pontos, respondido: quantidade })
+      return atualizarPontos
     } catch (error) {
       throw { message: error.message, status: 500 }
     }
-}
+  },
+  //buscar perfil por id
+  buscarPorId: async (_id) => {
+    try {
+      const id = _id
+      const achado = await perfilModel.findOne({ _id: id })
+      return achado
+    } catch (error) {
+      throw { message: error.message, status: 500 }
+    }
+
+  }
 }

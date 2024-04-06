@@ -9,7 +9,7 @@ module.exports={
                 let perfilEncontrado = await perfilModel.findOne({
                     "perfil.email":perfil.email
                 }).select("+perfil.senha").exec()
-                console.log(perfilEncontrado)
+               // console.log(perfilEncontrado)
                 if (perfilEncontrado) {
                     const match = await bcrypt.compare(perfil.senha, perfilEncontrado.perfil.senha)
                     const igual= perfilEncontrado.perfil.email== perfil.email

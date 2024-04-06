@@ -3,21 +3,29 @@ const router = express.Router()
 const perfilService = require('./../services/perfilService')
 
 
-router.post('',async(req,res)=> {
+router.post('', async (req, res) => {
     try {
         const resposta = await perfilService.cadastrar(req.body)
         res.json(resposta)
-        
+
     } catch (error) {
-        throw{message: message.error,status:500}
+        throw { message: message.error, status: 500 }
     }
 })
-router.post("/pontuacao",async (req,res)=>{
+router.post("/pontuacao", async (req, res) => {
     try {
         const resposta = await perfilService.atualizarPontuacao(req.body)
         res.json(resposta)
     } catch (error) {
-        
+
+    }
+})
+router.get("/", async (req, res) => {
+    try {
+        const resposta = await perfilService.buscarPorId(req.body)
+        res.json(resposta)
+    } catch (error) {
+
     }
 })
 module.exports = router

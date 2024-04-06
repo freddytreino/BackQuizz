@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const loginService = require('./../services/LoginService')
 
-router.post('', async (req,res)=>{
+router.post('', async (req, res) => {
     try {
         const resposta = await loginService.autenticar(req.body)
         res.json(resposta)
@@ -13,4 +13,4 @@ router.post('', async (req,res)=>{
     }
 })
 
-module.exports=router
+module.exports = router
