@@ -9,16 +9,6 @@ const questaoQuimica = require("./../models/QuestoesQuimica");
 const questaoLinguagens = require('./../models/QuestoesLinguagens');
 
 module.exports = {
-    /*
-    criarQuestao: async (questao) => {
-        try {
-            let novaQuestao = await questionModel.create(questao);
-            return novaQuestao;
-        } catch (error) {
-            console.error('Erro ao criar questão:', error);
-            throw new Error('Erro ao criar a questão. Por favor, tente novamente mais tarde.');
-        }
-    },*/
     //regras para criar questões
     criarQuestaoLinguagens: async (questao) => {
         try {
@@ -87,10 +77,58 @@ module.exports = {
     //teste para busncar
     buscarQuestoesLinguagens: async () => {
         try {
-            let todas = await questaoLinguagens.find();
+            let todas = await questaoLinguagens.aggregate([{$match:{}},{$sample:{size:5}}]);
             return todas
         } catch (error) {
-
+            throw new Error('Erro ao buscar as questões. Por favor, tente novamente mais tarde.');
+        }
+    },
+    buscarQuestoesBiologia: async()=>{
+        try {
+            let questoes = await questaoBiologia.aggregate([{$match:{}},{$sample:{size:5}}]);
+            return questoes
+        } catch (error) {
+            throw new Error('Erro ao buscar as questões. Por favor, tente novamente mais tarde.');
+        }
+    },
+    buscarQuestoesFilosofia: async()=>{
+        try {
+            let questoes = await questaoFilosofia.aggregate([{$match:{}},{$sample:{size:5}}]);
+            return questoes
+        } catch (error) {
+            throw new Error('Erro ao buscar as questões. Por favor, tente novamente mais tarde.');
+        }
+    },
+    buscarQuestoesFisica: async()=>{
+        try {
+            let questoes = await questaoFisica.aggregate([{$match:{}},{$sample:{size:5}}]);
+            return questoes
+        } catch (error) {
+            throw new Error('Erro ao buscar as questões. Por favor, tente novamente mais tarde.');
+        }
+    },
+    buscarQuestoesHistoria: async()=>{
+        try {
+            let questoes = await questaoHistoria.aggregate([{$match:{}},{$sample:{size:5}}]);
+            return questoes
+        } catch (error) {
+            throw new Error('Erro ao buscar as questões. Por favor, tente novamente mais tarde.');
+        }
+    },
+    buscarQuestoesMatematica: async()=>{
+        try {
+            let questoes = await questaoMath.aggregate([{$match:{}},{$sample:{size:5}}]);
+            return questoes
+        } catch (error) {
+            throw new Error('Erro ao buscar as questões. Por favor, tente novamente mais tarde.');
+        }
+    },
+    buscarQuestoesQuimica: async()=>{
+        try {
+            let questoes = await questaoQuimica.aggregate([{$match:{}},{$sample:{size:5}}]);
+            return questoes
+        } catch (error) {
+            throw new Error('Erro ao buscar as questões. Por favor, tente novamente mais tarde.');
         }
     },
     buscarQuestoes: async () => {

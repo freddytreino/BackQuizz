@@ -130,6 +130,54 @@ router.get('/linguagens', async (req, res) => {
 
     }
 })
+router.get('/biologia', async (req,res)=>{
+    try {
+        const achou = await questaoService.buscarQuestoesBiologia();
+        res.json(achou)
+    } catch (error) {
+        
+    }
+})
+router.get('/filosofia', async (req,res)=>{
+    try {
+        const achou = await questaoService.buscarQuestoesFilosofia();
+        res.json(achou)
+    } catch (error) {
+        
+    }
+})
+router.get('/fisica', async (req,res)=>{
+    try {
+        const achou = await questaoService.buscarQuestoesFisica();
+        res.json(achou)
+    } catch (error) {
+        
+    }
+})
+router.get('/historia', async (req,res)=>{
+    try {
+        const achou = await questaoService.buscarQuestoesHistoria();
+        res.json(achou)
+    } catch (error) {
+        
+    }
+})
+router.get('/matematica', async (req,res)=>{
+    try {
+        const achou = await questaoService.buscarQuestoesMatematica();
+        res.json(achou)
+    } catch (error) {
+        
+    }
+})
+router.get('/quimica', async (req,res)=>{
+    try {
+        const achou = await questaoService.buscarQuestoesQuimica();
+        res.json(achou)
+    } catch (error) {
+        
+    }
+})
 router.get('', async (req, res) => {
     try {
         const achou = await questaoService.buscarQuestoes();
