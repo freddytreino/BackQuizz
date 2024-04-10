@@ -131,6 +131,14 @@ module.exports = {
             throw new Error('Erro ao buscar as questões. Por favor, tente novamente mais tarde.');
         }
     },
+    buscarQuestoesGeografia: async()=>{
+        try {
+            let questoes = await questaoGeografia.aggregate([{$match:{}},{$sample:{size:5}}]);
+            return questoes
+        } catch (error) {
+            throw new Error('Erro ao buscar as questões. Por favor, tente novamente mais tarde.');
+        }
+    },
     buscarQuestoes: async () => {
         try {
             let todas = await questionModel.aggregate([{$match:{subject:'matemática'}},{$sample:{size:5}}]);
@@ -139,6 +147,7 @@ module.exports = {
 
         }
     },
+    
     // regras para buscar o ultimo numero para usar ao criar a questao
     buscarUltimoNumeroLinguagens: async () => {
 

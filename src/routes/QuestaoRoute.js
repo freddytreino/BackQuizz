@@ -178,6 +178,14 @@ router.get('/quimica', async (req,res)=>{
         
     }
 })
+router.get('/geografia', async (req,res)=>{
+    try {
+        const achou = await questaoService.buscarQuestoesGeografia();
+        res.json(achou)
+    } catch (error) {
+        
+    }
+})
 router.get('', async (req, res) => {
     try {
         const achou = await questaoService.buscarQuestoes();
