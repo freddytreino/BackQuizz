@@ -20,9 +20,9 @@ router.post("/pontuacao", async (req, res) => {
 
     }
 })
-router.get("/", async (req, res) => {
+router.get("/:id", async (req, res) => {
     try {
-        const resposta = await perfilService.buscarPorId(req.body)
+        const resposta = await perfilService.buscarPorId(req.params.id)
         res.json(resposta)
     } catch (error) {
 
