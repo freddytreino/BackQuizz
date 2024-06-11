@@ -56,6 +56,11 @@ isCorrect | Boolean
 ## Perfil
 Recurso | método | autenticado? | Objetivo | Retorno
 ---- | ---- | ---- | ---- |---- 
+/perfil | POST | Não | Cadastrar novo perfil | 
+/perfil/pontuacao | POST | Sim | Atualiza a pontuacao do perfil |
+/perfil/:id | POST | Sim | Busca o perfil pelo id
+
+
 
 
 ## Login
@@ -66,3 +71,6 @@ Recurso | método | autenticado? | Objetivo | Retorno
 ## Questoes
 Recurso | método | autenticado? | Objetivo | Retorno
 ---- | ---- | ---- | ---- |---- 
+/quest/linguagens | POST | Sim | Criar uma nova questão de Linguagem |
+/quest/linguagens | GET | Sim | Busca as questões de linguagens |
+/quest/ultimoLinguagens | GET | Busca o número da última questão criada para Linguagens |
