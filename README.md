@@ -46,6 +46,7 @@ email | String
 senha | String
 
 ### Questions
+Atributo | Tipo
 ---- | ----
 text | String
 isCorrect | Boolean
