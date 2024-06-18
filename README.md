@@ -31,7 +31,7 @@ Atributo | Tipo
 numero | Number
 question | String*
 level | Enum  ['fácil', 'médio', 'difícil']*
-tipo | Enum [ "Contato", "Solicitação de amizadade" ]*
+tipo | Enum [ "Linguagens", "" ]*
 alternatives | Alternatives
 
 > Entidades marcadas com asterisco são entidades obrigatórias. As definições das mesmas estão abaixo.
