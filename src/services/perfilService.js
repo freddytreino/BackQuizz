@@ -43,7 +43,7 @@ module.exports = {
 
   buscarmelhores: async()=>{
     try {
-      const achado = await perfilModel.find().sort({ pontuacao: -1 }).limit(5)
+      const achado = await perfilModel.find({usuario:true}).sort({ pontuacao: -1 }).limit(5)
       return achado
     } catch (error) {
       throw { message: error.message, status: 500 }
