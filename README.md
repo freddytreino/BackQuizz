@@ -1,3 +1,28 @@
+## Descrição do Projeto
+
+Este projeto é uma aplicação backend construída com Node.js. Utiliza várias bibliotecas populares para gerenciamento de autenticação, encriptação, comunicação com o banco de dados, entre outras funcionalidades essenciais.
+
+## Instalação
+Para executar esta aplicação, siga as etapas abaixo:
+
+1. Clone o repositório para a sua máquina local.  
+2. Navegue até o diretório do projeto.  
+3. Execute npm install para instalar todas as dependências.  
+4. Crie um arquivo .env na raiz do projeto e configure suas variáveis de ambiente conforme necessário.   
+5. Execute npm run dev para iniciar o servidor de desenvolvimento com nodemon.
+
+## Dependências
+
+As principais dependências do projeto são:
+
+- bcrypt: ^5.1.1  
+- cors: ^2.8.5  
+- dotenv: ^16.4.5  
+- express: ^4.19.1  
+- jsonwebtoken: ^9.0.2  
+- mongoose: ^8.2.3  
+- nodemon: ^3.1.0  
+
 # Quiz BRAINUP
 
 Projeto Quiz BRAINUP tem como objetivo criar uma aplicação para a disciplina Programação Web do 1 semestre de 2024 da UFMS.
@@ -56,9 +81,9 @@ isCorrect | Boolean
 ## Perfil
 Recurso | método | autenticado? | Objetivo | Retorno
 ---- | ---- | ---- | ---- |---- 
-/perfil | POST | Não | Cadastrar novo perfil | 
-/perfil/pontuacao | POST | Sim | Atualiza a pontuacao do perfil |
-/perfil/:id | POST | Sim | Busca o perfil pelo id
+/perfil | POST | Não | Cadastrar novo perfil | Perfil, nome, pontuação, id
+/perfil/pontuacao | POST | Sim | Atualiza a pontuacao do perfil | Perfil, nome, pontuação, id
+/perfil/:id | POST | Sim | Busca o perfil pelo id | Perfil, nome, pontuação, id
 
 
 
@@ -71,6 +96,27 @@ Recurso | método | autenticado? | Objetivo | Retorno
 ## Questoes
 Recurso | método | autenticado? | Objetivo | Retorno
 ---- | ---- | ---- | ---- |---- 
-/quest/linguagens | POST | Sim | Criar uma nova questão de Linguagem |
-/quest/linguagens | GET | Sim | Busca as questões de linguagens |
-/quest/ultimoLinguagens | GET | Sim | Busca o número da última questão criada para Linguagens |
+/quest/linguagens | POST | Sim | Criar uma nova questão de Linguagem | id da questão
+/quest/linguagens | GET | Sim | Busca as questões de linguagens | questões
+/quest/ultimoLinguagens | GET | Sim | Busca o número da última questão criada para Linguagens | INT
+/quest/biologia | POST | Sim | Criar uma nova questão de Linguagem | id da questão
+/quest/biologia | GET | Sim | Busca as questões de linguagens | questões
+/quest/ultimoBiologia | GET | Sim | Busca o número da última questão criada para Linguagens | INT
+/quest/filosofia | POST | Sim | Criar uma nova questão de Linguagem | id da questão
+/quest/filosofia | GET | Sim | Busca as questões de linguagens | questões
+/quest/ultimoFilosofia | GET | Sim | Busca o número da última questão criada para Linguagens | INT
+/quest/fisica | POST | Sim | Criar uma nova questão de Linguagem | id da questão
+/quest/fisica | GET | Sim | Busca as questões de linguagens | questões
+/quest/ultimoFisica | GET | Sim | Busca o número da última questão criada para Linguagens | INT
+/quest/geografia | POST | Sim | Criar uma nova questão de Linguagem | id da questão
+/quest/geografia | GET | Sim | Busca as questões de linguagens | questões
+/quest/ultimoGeografia | GET | Sim | Busca o número da última questão criada para Linguagens | INT
+/quest/historia | POST | Sim | Criar uma nova questão de Linguagem | id da questão
+/quest/historia | GET | Sim | Busca as questões de linguagens | questões
+/quest/ultimoHistoria | GET | Sim | Busca o número da última questão criada para Linguagens | INT
+/quest/matematica | POST | Sim | Criar uma nova questão de Linguagem | id da questão
+/quest/matematica | GET | Sim | Busca as questões de linguagens | questões
+/quest/ultimoMath | GET | Sim | Busca o número da última questão criada para Linguagens | INT
+/quest/quimica | POST | Sim | Criar uma nova questão de Linguagem | id da questão
+/quest/quimica | GET | Sim | Busca as questões de linguagens | questões
+/quest/ultimoQuimica | GET | Sim | Busca o número da última questão criada para Linguagens | INT
