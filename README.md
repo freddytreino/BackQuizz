@@ -7,10 +7,10 @@ Para executar esta aplicação, siga as etapas abaixo:
 
 1. Clone o repositório para a sua máquina local.
    `git clone https://github.com/freddytreino/BackQuizz.git`
-2. Navegue até o diretório do projeto. cd src  
-3. Execute npm install para instalar todas as dependências.  npm install
+2. Navegue até o diretório do projeto. `cd src`  
+3. Execute npm install para instalar todas as dependências.  `npm install`
 4. Crie um arquivo .env na raiz do projeto e configure suas variáveis de ambiente conforme necessário.  (Enviadas pelo email)
-5. Execute npm run dev para iniciar o servidor de desenvolvimento com nodemon.
+5. Execute `npm run dev` para iniciar o servidor de desenvolvimento com nodemon.
 
 ## Dependências
 
